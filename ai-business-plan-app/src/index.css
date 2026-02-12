@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer base {
+  body {
+    @apply bg-dark-950 text-white font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-dark-950 font-bold py-3 px-8 rounded-xl hover:from-primary-400 hover:to-primary-500 transition-all duration-200 shadow-lg shadow-primary-500/20;
+  }
+  
+  .btn-secondary {
+    @apply border border-dark-700 bg-dark-900 text-white font-semibold py-3 px-8 rounded-xl hover:bg-dark-800 hover:border-dark-600 transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-dark-900 border border-dark-800 rounded-2xl p-6;
+  }
+  
+  .input-field {
+    @apply w-full bg-dark-800 border border-dark-700 rounded-xl px-4 py-3 text-white placeholder-dark-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/20 transition-all;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-white mb-4;
+  }
+  
+  .section-subtitle {
+    @apply text-dark-400 text-lg max-w-2xl;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Score gauge animation */
+@keyframes scoreReveal {
+  from { stroke-dashoffset: 283; }
+}
+
+.score-circle {
+  animation: scoreReveal 1.5s ease-out forwards;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-dark-600;
+}
